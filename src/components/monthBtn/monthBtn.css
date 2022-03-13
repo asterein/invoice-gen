@@ -1,0 +1,15 @@
+.month-btn {
+    display: inline-block;
+    padding: 0.5rem;
+    text-align: center;
+    border: 1px solid var(--mid-grey);
+    border-radius: 5px;
+    color: var(--mid-grey);
+    font-family: monospace;
+    font-size: 0.75rem;
+    cursor: pointer;
+}
+
+.active-month {
+    background: var(--light-grey);
+}

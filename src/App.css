@@ -1,0 +1,176 @@
+:root {
+    --light-grey: #e1e1e1;
+    --mid-grey: #525252;
+    font-size: 11px;
+}
+
+.app {
+    font-family: arial;
+    letter-spacing: 0.5px;
+    line-height: 1.25rem;
+}
+
+h1 {
+    font-variant: small-caps;
+    margin: 0;
+    opacity: 0.5;
+    text-align: right;
+    padding: 0.5rem;
+}
+
+h3 {
+    text-align: center;
+}
+
+.file-input, button {
+    cursor: pointer;
+    display: block;
+    padding: 0.5rem;
+    text-align: center;
+    border: 1px solid var(--mid-grey);
+    border-radius: 5px;
+    color: var(--mid-grey);
+    font-family: monospace;
+    font-size: 0.75rem;
+    background: transparent;
+}
+
+button:hover {
+    background: var(--light-grey);
+}
+
+.file-input {
+    margin: 0.5rem 0;
+}
+
+.grid {
+    display: grid;
+    grid-gap: 0.5rem;
+    align-items: baseline;
+    padding: 0.5rem;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.month-container {
+    grid-column: 2 / span 2;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.month-container-header {
+    grid-column: 1 / span 4;
+}
+
+.invoice-container {
+    padding: 1rem;
+    max-width: 770px;
+    min-width: 675px;
+    margin: 0 auto;
+}
+
+.settings {
+    width: 650px;
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+.invoice-header {
+    grid-template-columns: repeat(5, 1fr);
+    margin-bottom: 1rem;
+}
+
+.invoice-header .contact-block {
+    grid-column: 1 / span 3;
+}
+
+/* Invoice metadata styles */
+.metadata-grid {
+    grid-column: 4 / span 2;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: right;
+    min-width: 245px;
+    padding: 0;
+}
+
+.metadata-grid .label {
+    font-weight: bold;
+    font-variant: small-caps;
+    text-align: left;
+}
+
+.metadata-grid .reason {
+    grid-column: 1 / span 2;
+    text-align: left;
+}
+
+/* Week mapping styles */
+.week {
+    grid-template-columns: repeat(9, 1fr);
+    border-top: 1px solid var(--mid-grey);
+}
+
+.week * {
+    text-align: center;
+    display: block;
+}
+
+.week .term {
+    font-size: 0.75rem;
+}
+
+.week .description {
+    grid-column: 2 / span 7;
+    text-align: left;
+    padding: 0.25rem;
+}
+
+.week .rate {
+    grid-column: 1 / span 8;
+    text-align: right;
+    font-weight: bold;
+    font-variant: small-caps;
+}
+
+.week .hours {
+    text-align: center;
+}
+
+.week-header {
+    font-variant: small-caps;
+    font-weight: bold;
+    border-top: 0px;
+    border-bottom: 1px solid var(--mid-grey);
+}
+
+.week-header * {
+    padding: 0.25rem;
+}
+
+.week-header .term {
+    font-size: 1rem;
+}
+
+.rate-row {
+    border-top: 1.5px solid var(--mid-grey);
+}
+
+.total-row {
+    border-top: 0px;
+    margin-bottom: 1rem;
+}
+
+@media print {
+    .no-print, .no-print * {
+        display: none !important;
+    }
+
+    .invoice-container {
+        margin-top: -2rem;
+    }
+}
