@@ -80,6 +80,8 @@ function App() {
       }
   }, [data]);
 
+  let generate = month != null && data != null && rate != null;
+
   return (
     <div className="app">
       <div className="no-print settings">
@@ -106,7 +108,7 @@ function App() {
                   };
                   reader.readAsText(file);
                 }}
-                disabled={data && rate}
+                disabled={generate}
               />
               Not sure how to format? <a
                 href={downloadTemplate}
@@ -120,7 +122,7 @@ function App() {
                 setRate(null);
                 fileInput.current.value = "";
             }}>Reset</button>
-            {month && data && rate && (<button onClick={() => window.print()}>Print/Save</button>)}
+            {generate && (<button onClick={() => window.print()}>Print/Save</button>)}
           </div>
           <div className="month-container grid">
             <div className="month-container-header"><b>Pick a month ...</b></div>
@@ -135,7 +137,7 @@ function App() {
           </div>
         </div>
       </div>
-      {month && data && rate && (
+      {generate && (
         <div className="invoice-container">
             <h1>Invoice</h1>
             <div className="grid invoice-header">
